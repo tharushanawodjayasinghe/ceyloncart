@@ -28,7 +28,7 @@ INSERT INTO products (name, description, price, category, image_url, stock) VALU
   'Freshly harvested whole black peppercorns from the spice gardens of Matale, Sri Lanka. Intensely aromatic with a bold, pungent heat and earthy depth. Sun-dried and hand-sorted for maximum quality. An essential spice for every kitchen.',
   6.49,
   'Spices & Herbs',
-  'https://images.unsplash.com/photo-1599909559994-45a4c3f91ea2?w=600&q=80',
+  'https://images.unsplash.com/photo-1509358217973-88739f11f489?w=600&q=80',
   180
 ),
 
@@ -82,7 +82,7 @@ INSERT INTO products (name, description, price, category, image_url, stock) VALU
   'An exquisite handloom saree woven by master weavers in Moratuwa, featuring a rich border with traditional motifs inspired by Sri Lanka''s royal court heritage. Made from pure cotton for comfort in tropical climates. A timeless garment for weddings, festivals, and cultural events.',
   64.99,
   'Clothing & Textiles',
-  'https://images.unsplash.com/photo-1610189052778-3a3bd4e0a17f?w=600&q=80',
+  'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80',
   40
 ),
 

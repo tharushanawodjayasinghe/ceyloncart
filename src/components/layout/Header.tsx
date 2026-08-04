@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { ShoppingCart, Leaf, Menu, LogOut, User, Package } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useCart } from '@/context/CartContext';
 import { createClient } from '@/lib/supabase/client';
@@ -92,10 +91,10 @@ export default function Header() {
             <div className="hidden md:flex items-center gap-2">
               {user ? (
                 <DropdownMenu>
-                  <DropdownMenuTrigger>
-                    <Button variant="ghost" size="icon" className="rounded-full">
-                      <User className="w-5 h-5" />
-                    </Button>
+                  <DropdownMenuTrigger
+                    className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'rounded-full')}
+                  >
+                    <User className="w-5 h-5" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-48">
                     <div className="px-2 py-1.5">
@@ -132,10 +131,10 @@ export default function Header() {
 
             {/* Mobile menu toggle */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="w-5 h-5" />
-                </Button>
+              <SheetTrigger
+                className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'md:hidden')}
+              >
+                <Menu className="w-5 h-5" />
               </SheetTrigger>
               <SheetContent side="right" className="w-72">
                 <div className="flex flex-col gap-6 pt-6">
