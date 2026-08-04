@@ -32,6 +32,11 @@ export async function getProducts(category?: string): Promise<Product[]> {
 // Fetch a single product by ID
 export async function getProductById(id: string): Promise<Product | null> {
   try {
+    // Validate UUID format
+    if (!id || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
+      return null;
+    }
+
     const supabase = await createClient();
 
     const { data, error } = await supabase

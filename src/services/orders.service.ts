@@ -75,6 +75,11 @@ export async function createOrder(params: {
 
 // Fetch an order with its items by order ID
 export async function getOrderById(orderId: string): Promise<Order | null> {
+  // Validate UUID format to avoid invalid query execution
+  if (!orderId || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderId)) {
+    return null;
+  }
+
   const supabase = await createClient();
 
   const { data, error } = await supabase
