@@ -29,10 +29,9 @@ export default function Header() {
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const router = useRouter();
-  const supabase = createClient();
-
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }) => setUser(data?.user ?? null)).catch(() => setUser(null));
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (_event, session) => setUser(session?.user ?? null)
     );
@@ -40,6 +39,7 @@ export default function Header() {
   }, []);
 
   const handleLogout = async () => {
+    const supabase = createClient();
     await supabase.auth.signOut();
     router.push('/');
     router.refresh();
