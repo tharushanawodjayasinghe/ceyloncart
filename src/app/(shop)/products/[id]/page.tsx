@@ -62,7 +62,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <Link href="/" className="hover:text-primary transition-colors">
+          <Link href="/products" className="hover:text-primary transition-colors">
             Products
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
@@ -72,7 +72,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         </nav>
 
         <Link
-          href="/"
+          href="/products"
           className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }), 'text-muted-foreground')}
         >
           <ArrowLeft className="w-4 h-4 mr-1.5" />
@@ -221,7 +221,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               <h2 className="text-2xl font-bold text-gray-900">You Might Also Like</h2>
               <p className="text-sm text-muted-foreground">More authentic Sri Lankan products</p>
             </div>
-            <Link href="/" className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>
+            <Link href="/products" className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>
               View All
             </Link>
           </div>
